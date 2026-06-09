@@ -1,30 +1,652 @@
-🎓
-Ready Education
-Asset Naming Builder
-Marketing Ops
-1. SELECT ASSET TYPE
-LP
-Landing page
-EM
-Email
-OD
-On-demand
-TY
-Thank-you
-EVT
-Event
-FORM
-Form
-NL
-Newsletter
-GUIDE
-Guide
-DEMO
-Demo
-CMP
-Campaign
-LIST
-List upload
-GENERATED NAME
-Select an asset type to get started
-Ready Education — Marketing Operations — Naming Guide v1.3
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ready Education — Asset Naming Builder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue: #0049DB;
+    --blue-light: #2086FF;
+    --blue-soft: #D7EDFF;
+    --blue-pale: #EEF4FF;
+    --black: #2A2B2A;
+    --gray: #6B6C6B;
+    --gray-light: #E8E9E8;
+    --gray-pale: #F5F6F5;
+    --white: #FFFFFF;
+    --teal: #4EFFCA;
+    --success: #0A7A4A;
+    --success-bg: #E6F5EE;
+    --radius: 10px;
+    --radius-sm: 6px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.06);
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--gray-pale);
+    color: var(--black);
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  header {
+    background: var(--blue);
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .header-hat {
+    width: 32px;
+    height: 32px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  .header-title {
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .header-sub {
+    color: rgba(255,255,255,0.6);
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  .header-badge {
+    background: rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.8);
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 99px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+  }
+
+  .card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 28px;
+    margin-bottom: 16px;
+  }
+
+  .card-title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 16px;
+  }
+
+  .type-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 8px;
+  }
+
+  .type-btn {
+    background: var(--gray-pale);
+    border: 1.5px solid transparent;
+    border-radius: var(--radius-sm);
+    padding: 10px 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.15s, border-color 0.15s;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .type-btn:hover {
+    background: var(--blue-pale);
+    border-color: rgba(0,73,219,0.2);
+  }
+
+  .type-btn.active {
+    background: var(--blue-pale);
+    border-color: var(--blue);
+  }
+
+  .type-code {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--blue);
+    display: block;
+  }
+
+  .type-desc {
+    font-size: 11px;
+    color: var(--gray);
+    display: block;
+    margin-top: 3px;
+    line-height: 1.3;
+  }
+
+  .fields-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .field-group.full { grid-column: 1 / -1; }
+
+  label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--gray);
+  }
+
+  select, input[type="text"] {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--black);
+    background: var(--gray-pale);
+    border: 1.5px solid var(--gray-light);
+    border-radius: var(--radius-sm);
+    padding: 9px 12px;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.15s;
+    -webkit-appearance: none;
+  }
+
+  select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B6C6B' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 32px;
+    cursor: pointer;
+  }
+
+  select:focus, input:focus {
+    border-color: var(--blue);
+    background: var(--white);
+  }
+
+  .hint {
+    font-size: 11px;
+    color: var(--gray);
+    line-height: 1.4;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--gray-light);
+    margin: 20px 0;
+  }
+
+  .output-card {
+    background: var(--blue);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin-bottom: 16px;
+  }
+
+  .output-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 10px;
+  }
+
+  .output-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 15px;
+    color: white;
+    line-height: 1.6;
+    min-height: 28px;
+    word-break: break-all;
+  }
+
+  .output-name.empty {
+    color: rgba(255,255,255,0.35);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-style: italic;
+  }
+
+  .output-actions {
+    margin-top: 14px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .copy-btn {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 7px 16px;
+    border-radius: 99px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background 0.15s;
+  }
+
+  .copy-btn:hover { background: rgba(255,255,255,0.2); }
+  .copy-btn.copied { background: rgba(255,255,255,0.2); }
+
+  .also-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 20px 28px;
+    margin-bottom: 16px;
+  }
+
+  .also-title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 12px;
+  }
+
+  .also-item {
+    border-radius: var(--radius-sm);
+    background: var(--gray-pale);
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .also-item.hs {
+    background: var(--blue-pale);
+    border-left: 3px solid var(--blue);
+  }
+
+  .also-item-left { flex: 1; min-width: 0; }
+
+  .also-item-type {
+    font-size: 11px;
+    color: var(--gray);
+    margin-bottom: 3px;
+    font-weight: 500;
+  }
+
+  .also-item.hs .also-item-type { color: var(--blue); }
+
+  .also-item-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 12.5px;
+    color: var(--black);
+    word-break: break-all;
+    line-height: 1.5;
+  }
+
+  .also-copy {
+    background: none;
+    border: 1px solid var(--gray-light);
+    border-radius: var(--radius-sm);
+    padding: 4px 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    color: var(--gray);
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: border-color 0.15s, color 0.15s;
+  }
+
+  .also-copy:hover { border-color: var(--blue); color: var(--blue); }
+  .also-copy.copied { border-color: var(--success); color: var(--success); }
+
+  .section-hidden { display: none; }
+
+  footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--gray);
+    padding: 0 24px 40px;
+  }
+
+  @media (max-width: 540px) {
+    .fields-grid { grid-template-columns: 1fr; }
+    .field-group.full { grid-column: 1; }
+    header { padding: 16px 20px; }
+    main { padding: 20px 16px 48px; }
+    .card, .output-card, .also-card { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-brand">
+    <div class="header-hat">🎓</div>
+    <div>
+      <div class="header-title">Ready Education</div>
+      <div class="header-sub">Asset Naming Builder</div>
+    </div>
+  </div>
+  <div class="header-badge">Marketing Ops</div>
+</header>
+
+<main>
+
+  <div class="card">
+    <div class="card-title">1. Select asset type</div>
+    <div class="type-grid" id="typeGrid">
+      <button class="type-btn" data-code="LP" data-label="Landing page" onclick="selectType(this)">
+        <span class="type-code">LP</span><span class="type-desc">Landing page</span>
+      </button>
+      <button class="type-btn" data-code="EM" data-label="Email" onclick="selectType(this)">
+        <span class="type-code">EM</span><span class="type-desc">Email</span>
+      </button>
+      <button class="type-btn" data-code="OD" data-label="On-demand page" onclick="selectType(this)">
+        <span class="type-code">OD</span><span class="type-desc">On-demand</span>
+      </button>
+      <button class="type-btn" data-code="TY" data-label="Thank-you" onclick="selectType(this)">
+        <span class="type-code">TY</span><span class="type-desc">Thank-you</span>
+      </button>
+      <button class="type-btn" data-code="EVT" data-label="Event" onclick="selectType(this)">
+        <span class="type-code">EVT</span><span class="type-desc">Event</span>
+      </button>
+      <button class="type-btn" data-code="FORM" data-label="Form" onclick="selectType(this)">
+        <span class="type-code">FORM</span><span class="type-desc">Form</span>
+      </button>
+      <button class="type-btn" data-code="NL" data-label="Newsletter" onclick="selectType(this)">
+        <span class="type-code">NL</span><span class="type-desc">Newsletter</span>
+      </button>
+      <button class="type-btn" data-code="GUIDE" data-label="Guide / resource" onclick="selectType(this)">
+        <span class="type-code">GUIDE</span><span class="type-desc">Guide</span>
+      </button>
+      <button class="type-btn" data-code="DEMO" data-label="Demo" onclick="selectType(this)">
+        <span class="type-code">DEMO</span><span class="type-desc">Demo</span>
+      </button>
+      <button class="type-btn" data-code="CMP" data-label="Campaign" onclick="selectType(this)">
+        <span class="type-code">CMP</span><span class="type-desc">Campaign</span>
+      </button>
+      <button class="type-btn" data-code="LIST" data-label="List upload" onclick="selectType(this)">
+        <span class="type-code">LIST</span><span class="type-desc">List upload</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="card" id="nlSection" style="display:none;">
+    <div class="card-title">2. Fill in details</div>
+    <div class="fields-grid">
+      <div class="field-group">
+        <label for="nlMonth">Month</label>
+        <select id="nlMonth" onchange="build()">
+          <option value="">Select month</option>
+          <option>January</option><option>February</option><option>March</option>
+          <option>April</option><option>May</option><option>June</option>
+          <option>July</option><option>August</option><option>September</option>
+          <option>October</option><option>November</option><option>December</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label for="nlYear">Year (2 digit)</label>
+        <input type="text" id="nlYear" placeholder="e.g. 26" maxlength="2" oninput="build()">
+      </div>
+      <div class="field-group">
+        <label for="nlAudience">Audience</label>
+        <select id="nlAudience" onchange="build()">
+          <option value="">Select audience</option>
+          <option>Customer NA</option>
+          <option>Prospect NA</option>
+          <option>NA</option>
+          <option>Customer E2AP</option>
+          <option>Prospect E2AP</option>
+          <option>E2AP</option>
+          <option>Internal</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label for="nlSegment">Product / segment</label>
+        <input type="text" id="nlSegment" placeholder="e.g. CG+RC" oninput="build()">
+      </div>
+    </div>
+  </div>
+
+  <div class="card" id="standardSection" style="display:none;">
+    <div class="card-title">2. Fill in details</div>
+    <div class="fields-grid">
+      <div class="field-group">
+        <label for="quarter">Quarter</label>
+        <select id="quarter" onchange="build()">
+          <option value="">Select quarter</option>
+          <option>Q1.26</option><option>Q2.26</option><option>Q3.26</option><option>Q4.26</option>
+          <option>Q1.27</option><option>Q2.27</option><option>Q3.27</option><option>Q4.27</option>
+        </select>
+        <span class="hint" id="evergreenHint" style="display:none;">Leave blank for evergreen assets</span>
+      </div>
+      <div class="field-group">
+        <label for="audience">Audience</label>
+        <select id="audience" onchange="build()">
+          <option value="">Select audience</option>
+          <option>Prospect NA</option>
+          <option>Customer NA</option>
+          <option>NA</option>
+          <option>Prospect E2AP</option>
+          <option>Customer E2AP</option>
+          <option>E2AP</option>
+          <option>Internal</option>
+        </select>
+      </div>
+      <div class="field-group full">
+        <label for="campaign">Campaign / topic name</label>
+        <input type="text" id="campaign" placeholder="e.g. Community College Student Engagement" oninput="build()">
+        <span class="hint">Use the exact same name as the HubSpot campaign</span>
+      </div>
+      <div class="field-group full">
+        <label for="detail">Detail / purpose</label>
+        <input type="text" id="detail" placeholder="e.g. Invite 1, Registration, Recording Follow-Up" oninput="build()">
+        <span class="hint" id="detailHint"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="output-card" id="outputCard">
+    <div class="output-label">Generated name</div>
+    <div class="output-name empty" id="outputName">Select an asset type to get started</div>
+    <div class="output-actions" id="outputActions" style="display:none;">
+      <button class="copy-btn" id="copyBtn" onclick="copyName()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        Copy name
+      </button>
+    </div>
+  </div>
+
+  <div class="also-card" id="alsoCard" style="display:none;">
+    <div class="also-title">You may also need</div>
+    <div id="alsoItems"></div>
+  </div>
+
+</main>
+
+<footer>
+  Ready Education &mdash; Marketing Operations &mdash; Naming Guide v1.3
+</footer>
+
+<script>
+  var selectedCode = '';
+
+  var detailHints = {
+    LP: 'e.g. Registration, Download',
+    EM: 'e.g. Invite 1, Last Chance, Recording Follow-Up, Registration Confirmation',
+    OD: 'e.g. Recording',
+    TY: 'e.g. Thank-You Page, Thank-You Email',
+    EVT: 'e.g. Registration, QR Landing Page',
+    FORM: 'e.g. Interest Form, Request Form, Download Form',
+    GUIDE: 'Optional',
+    DEMO: 'e.g. Request, Confirmation',
+    CMP: 'e.g. Email 1, Email 2, Launch, Last Chance',
+    LIST: 'e.g. Registrants, Attendees, No-Shows, Upload 1',
+  };
+
+  function selectType(btn) {
+    document.querySelectorAll('.type-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    selectedCode = btn.dataset.code;
+
+    var nl = document.getElementById('nlSection');
+    var std = document.getElementById('standardSection');
+
+    if (selectedCode === 'NL') {
+      nl.style.display = 'block';
+      std.style.display = 'none';
+    } else {
+      nl.style.display = 'none';
+      std.style.display = 'block';
+      document.getElementById('evergreenHint').style.display = selectedCode === 'FORM' ? 'inline' : 'none';
+      document.getElementById('detailHint').textContent = detailHints[selectedCode] || '';
+    }
+    build();
+  }
+
+  function v(id) { return (document.getElementById(id) || {}).value || ''; }
+
+  function sep(parts) {
+    return parts.filter(function(p) { return p && p.trim(); }).join(' \u2013 ');
+  }
+
+  function build() {
+    var name = '';
+    var also = [];
+
+    if (selectedCode === 'NL') {
+      var mo = v('nlMonth'), yr = v('nlYear'), aud = v('nlAudience'), seg = v('nlSegment');
+      if (mo && yr) name = sep([mo + ' ' + yr, 'NL', aud, seg]);
+    } else if (selectedCode === 'LIST') {
+      name = sep([v('quarter'), v('audience'), v('campaign'), v('detail')]);
+    } else {
+      var q = v('quarter'), aud = v('audience'), c = v('campaign'), d = v('detail');
+      var parts = (selectedCode === 'FORM' && !q)
+        ? ['FORM', aud, c, d]
+        : [q, selectedCode, aud, c, d];
+      name = sep(parts);
+
+      if (c && aud) {
+        var hsCampaign = q ? sep([q, aud, c]) : sep([aud, c]);
+        if (selectedCode === 'LP' || selectedCode === 'EVT') {
+          also.push({ label: 'HubSpot campaign name', val: q ? sep([q, aud, c]) : '', hs: true });
+          also.push({ label: 'Email \u2013 Launch', val: sep([q, 'EM', aud, c, 'Launch']) });
+          also.push({ label: 'Email \u2013 Reminder', val: sep([q, 'EM', aud, c, 'Reminder']) });
+          also.push({ label: 'List \u2013 Registrants', val: sep([q, aud, c, 'Registrants']) });
+        } else if (selectedCode === 'EM') {
+          also.push({ label: 'HubSpot campaign name', val: q ? sep([q, aud, c]) : '', hs: true });
+          also.push({ label: 'Landing page', val: sep([q, 'LP', aud, c, 'Registration']) });
+          also.push({ label: 'List \u2013 Registrants', val: sep([q, aud, c, 'Registrants']) });
+        } else if (selectedCode === 'OD') {
+          also.push({ label: 'HubSpot campaign name', val: q ? sep([q, aud, c]) : '', hs: true });
+          also.push({ label: 'Recording follow-up email', val: sep([q, 'EM', aud, c, 'Recording Follow-Up']) });
+        } else if (selectedCode === 'GUIDE') {
+          also.push({ label: 'HubSpot campaign name', val: q ? sep([q, aud, c]) : '', hs: true });
+          also.push({ label: 'Landing page', val: sep([q, 'LP', aud, c, 'Download']) });
+          also.push({ label: 'Form', val: sep([q, 'FORM', aud, c, 'Download Form']) });
+          also.push({ label: 'List \u2013 Downloads', val: sep([q, aud, c, 'Downloads']) });
+        } else if (selectedCode === 'FORM') {
+          if (q) also.push({ label: 'HubSpot campaign name', val: sep([q, aud, c]), hs: true });
+          also.push({ label: 'Landing page', val: sep([q, 'LP', aud, c, d || 'Download']) });
+        } else {
+          if (q) also.push({ label: 'HubSpot campaign name', val: sep([q, aud, c]), hs: true });
+        }
+        also = also.filter(function(a) { return a.val; });
+      }
+    }
+
+    var out = document.getElementById('outputName');
+    var actions = document.getElementById('outputActions');
+    var alsoCard = document.getElementById('alsoCard');
+    var alsoItems = document.getElementById('alsoItems');
+
+    if (name) {
+      out.textContent = name;
+      out.classList.remove('empty');
+      actions.style.display = 'flex';
+      var btn = document.getElementById('copyBtn');
+      btn.classList.remove('copied');
+      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy name';
+    } else {
+      out.textContent = selectedCode ? 'Fill in the fields above' : 'Select an asset type to get started';
+      out.classList.add('empty');
+      actions.style.display = 'none';
+    }
+
+    if (also.length) {
+      alsoItems.innerHTML = also.map(function(a) {
+        return '<div class="also-item' + (a.hs ? ' hs' : '') + '">' +
+          '<div class="also-item-left">' +
+          '<div class="also-item-type">' + a.label + '</div>' +
+          '<div class="also-item-name">' + a.val + '</div>' +
+          '</div>' +
+          '<button class="also-copy" onclick="copyText(this, \'' + a.val.replace(/'/g, "\\'") + '\')">Copy</button>' +
+          '</div>';
+      }).join('');
+      alsoCard.style.display = 'block';
+    } else {
+      alsoCard.style.display = 'none';
+    }
+  }
+
+  function copyName() {
+    var text = document.getElementById('outputName').textContent;
+    copyText(document.getElementById('copyBtn'), text, true);
+  }
+
+  function copyText(btn, text, isMain) {
+    navigator.clipboard.writeText(text).then(function() {
+      btn.classList.add('copied');
+      var orig = btn.innerHTML;
+      if (isMain) {
+        btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Copied';
+      } else {
+        btn.textContent = 'Copied';
+      }
+      setTimeout(function() {
+        btn.classList.remove('copied');
+        btn.innerHTML = isMain
+          ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy name'
+          : 'Copy';
+      }, 2000);
+    });
+  }
+</script>
+</body>
+</html>
