@@ -371,17 +371,14 @@
   <div class="card">
     <div class="card-title">1. Select asset type</div>
     <div class="type-grid" id="typeGrid">
-      <button class="type-btn" data-code="LP" data-label="Landing page" onclick="selectType(this)">
-        <span class="type-code">LP</span><span class="type-desc">Landing page</span>
+      <button class="type-btn" data-code="CMP" data-label="Campaign" onclick="selectType(this)">
+        <span class="type-code" style="font-size:11px;">Campaign</span><span class="type-desc">No code</span>
+      </button>
+      <button class="type-btn" data-code="DEMO" data-label="Demo" onclick="selectType(this)">
+        <span class="type-code">DEMO</span><span class="type-desc">Demo</span>
       </button>
       <button class="type-btn" data-code="EM" data-label="Email" onclick="selectType(this)">
         <span class="type-code">EM</span><span class="type-desc">Email</span>
-      </button>
-      <button class="type-btn" data-code="OD" data-label="On-demand page" onclick="selectType(this)">
-        <span class="type-code">OD</span><span class="type-desc">On-demand</span>
-      </button>
-      <button class="type-btn" data-code="TY" data-label="Thank-you" onclick="selectType(this)">
-        <span class="type-code">TY</span><span class="type-desc">Thank-you</span>
       </button>
       <button class="type-btn" data-code="EVT" data-label="Event" onclick="selectType(this)">
         <span class="type-code">EVT</span><span class="type-desc">Event</span>
@@ -389,20 +386,23 @@
       <button class="type-btn" data-code="FORM" data-label="Form" onclick="selectType(this)">
         <span class="type-code">FORM</span><span class="type-desc">Form</span>
       </button>
-      <button class="type-btn" data-code="NL" data-label="Newsletter" onclick="selectType(this)">
-        <span class="type-code">NL</span><span class="type-desc">Newsletter</span>
-      </button>
       <button class="type-btn" data-code="GUIDE" data-label="Guide / resource" onclick="selectType(this)">
         <span class="type-code">GUIDE</span><span class="type-desc">Guide</span>
       </button>
-      <button class="type-btn" data-code="DEMO" data-label="Demo" onclick="selectType(this)">
-        <span class="type-code">DEMO</span><span class="type-desc">Demo</span>
-      </button>
-      <button class="type-btn" data-code="CMP" data-label="Campaign" onclick="selectType(this)">
-        <span class="type-code">CMP</span><span class="type-desc">Campaign</span>
+      <button class="type-btn" data-code="LP" data-label="Landing page" onclick="selectType(this)">
+        <span class="type-code">LP</span><span class="type-desc">Landing page</span>
       </button>
       <button class="type-btn" data-code="LIST" data-label="List upload" onclick="selectType(this)">
         <span class="type-code">LIST</span><span class="type-desc">List upload</span>
+      </button>
+      <button class="type-btn" data-code="NL" data-label="Newsletter" onclick="selectType(this)">
+        <span class="type-code">NL</span><span class="type-desc">Newsletter</span>
+      </button>
+      <button class="type-btn" data-code="OD" data-label="On-demand page" onclick="selectType(this)">
+        <span class="type-code">OD</span><span class="type-desc">On-demand</span>
+      </button>
+      <button class="type-btn" data-code="TY" data-label="Thank-you" onclick="selectType(this)">
+        <span class="type-code">TY</span><span class="type-desc">Thank-you</span>
       </button>
     </div>
   </div>
@@ -559,6 +559,8 @@
       var q = v('quarter'), aud = v('audience'), c = v('campaign'), d = v('detail');
       var parts = (selectedCode === 'FORM' && !q)
         ? ['FORM', aud, c, d]
+        : selectedCode === 'CMP'
+        ? [q, c, d]
         : [q, selectedCode, aud, c, d];
       name = sep(parts);
 
