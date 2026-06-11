@@ -41,10 +41,7 @@
   .copy-btn.secondary:hover{background:#333}
   .copy-btn.secondary.copied{background:#1B8A2D}
   .divider{height:1px;background:#d4d4d4;margin:16px 0}
-  .checklist{background:#FFF8E1;border:1px solid #F0D060;border-radius:8px;padding:14px 18px;margin-top:16px}
-  .checklist-title{font-size:12px;font-weight:700;color:#854D0E;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:8px}
-  .checklist-item{font-size:13px;color:#633806;line-height:1.8;padding-left:20px;position:relative}
-  .checklist-item::before{content:"";position:absolute;left:0;top:7px;width:12px;height:12px;border:1.5px solid #B8860B;border-radius:3px}
+
   .match-badge{display:inline-block;background:#1B8A2D;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;letter-spacing:0.03em;vertical-align:middle;margin-left:6px}
   .related-label{font-size:11px;font-weight:600;color:#6b6b6b;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px}
   .related-name{font-size:13px;font-family:'SF Mono',monospace;color:#555;line-height:1.6;padding:3px 0}
@@ -284,34 +281,11 @@
       </div>
     </div>
 
-    <div class="divider"></div>
+    
 
-    <div class="output-section">
-      <div class="output-label">HubSpot Campaign Name</div>
-      <div class="output-small" id="hubspotName"></div>
-      <div class="copy-row">
-        <button class="copy-btn secondary" onclick="copyText('hubspotName',this)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy HubSpot Name</button>
-      </div>
-    </div>
+    
 
-    <div class="divider"></div>
-
-    <div class="output-section">
-      <div class="output-label">MQL Source Detail <span class="match-badge">MUST MATCH CAMPAIGN</span></div>
-      <div class="output-small" id="mqlName"></div>
-      <div class="copy-row">
-        <button class="copy-btn secondary" onclick="copyText('mqlName',this)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy MQL Source Detail</button>
-      </div>
-    </div>
-
-    <div class="checklist">
-      <div class="checklist-title">Before You Launch Checklist</div>
-      <div class="checklist-item">HubSpot campaign exists BEFORE any deals are created</div>
-      <div class="checklist-item">MQL source detail matches the campaign name exactly</div>
-      <div class="checklist-item">Registration list attributed to the campaign on upload</div>
-      <div class="checklist-item">Post-event / post-webinar list attributed to the campaign on upload</div>
-      <div class="checklist-item">All assets (emails, landing pages, forms) associated with the campaign</div>
-    </div>
+    
 
     <div id="relatedSection" style="display:none;margin-top:16px;">
       <div class="divider"></div>
@@ -387,10 +361,7 @@ function generate() {
   $('calendarName').textContent = calName;
 
   // HubSpot campaign name
-  let hubName = q + '.' + yr + ' - ' + aud + ' - ' + init;
   if (desc) hubName += ' ' + desc;
-  $('hubspotName').textContent = hubName;
-  $('mqlName').textContent = hubName;
 
   $('outputCard').classList.add('visible');
 
