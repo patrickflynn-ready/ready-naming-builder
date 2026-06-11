@@ -13,8 +13,8 @@
   .header .nav a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:14px;padding:6px 12px;border-radius:6px;transition:all 0.2s}
   .header .nav a:hover,.header .nav a.active{color:#fff;background:rgba(255,255,255,0.15)}
   .container{max-width:720px;margin:40px auto;padding:0 24px}
-  .card{background:#fff;border-radius:12px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.06);margin-bottom:24px}
-  .card h2{font-size:18px;font-weight:600;margin-bottom:6px}
+  .card{background:#fff;border-radius:12px;padding:32px;box-shadow:0 1px 3px rgba(0,0,0,0.06),0 1px 2px rgba(0,0,0,0.04);margin-bottom:24px}
+  .card h2{font-size:18px;font-weight:600;margin-bottom:6px;color:#2A2B2A}
   .card p.sub{font-size:14px;color:#6b6b6b;margin-bottom:24px;line-height:1.5}
   label{display:block;font-size:13px;font-weight:600;color:#444;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.04em}
   select,input[type="text"]{width:100%;padding:10px 14px;border:1px solid #ddd;border-radius:8px;font-size:15px;font-family:inherit;color:#2A2B2A;background:#fafafa;transition:border 0.2s;appearance:none;-webkit-appearance:none}
@@ -24,69 +24,39 @@
   .hint{font-size:12px;color:#999;margin-top:4px}
   .custom-field{display:none;margin-top:8px}
   .custom-field.visible{display:block}
-  .row-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .row-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
   .output-card{background:#f0f4ff;border:2px solid #0049DB;border-radius:12px;padding:24px 32px;margin-bottom:24px;display:none}
   .output-card.visible{display:block}
-  .output-section{margin-bottom:16px}
-  .output-section:last-child{margin-bottom:0}
-  .output-label{font-size:11px;font-weight:600;color:#0049DB;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px}
-  .output-name{font-size:18px;font-weight:700;color:#2A2B2A;font-family:'SF Mono','Fira Code','Consolas',monospace;word-break:break-all;line-height:1.4}
-  .output-small{font-size:14px;font-family:'SF Mono','Fira Code','Consolas',monospace;color:#555;line-height:1.4}
-  .copy-row{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
-  .copy-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;background:#0049DB;color:#fff;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;transition:background 0.2s}
+  .output-label{font-size:11px;font-weight:600;color:#0049DB;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px}
+  .output-name{font-size:20px;font-weight:700;color:#2A2B2A;font-family:'SF Mono','Fira Code','Consolas',monospace;word-break:break-all;line-height:1.4}
+  .copy-btn{display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:8px 18px;background:#0049DB;color:#fff;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;transition:background 0.2s}
   .copy-btn:hover{background:#003bb5}
   .copy-btn.copied{background:#1B8A2D}
-  .copy-btn.secondary{background:#555}
-  .copy-btn.secondary:hover{background:#333}
-  .copy-btn.secondary.copied{background:#1B8A2D}
-  .divider{height:1px;background:#d4d4d4;margin:16px 0}
-
-  .match-badge{display:inline-block;background:#1B8A2D;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;letter-spacing:0.03em;vertical-align:middle;margin-left:6px}
+  .divider{height:1px;background:#e0e0e0;margin:18px 0}
   .related-label{font-size:11px;font-weight:600;color:#6b6b6b;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px}
-  .related-name{font-size:13px;font-family:'SF Mono',monospace;color:#555;line-height:1.6;padding:3px 0}
+  .related-name{font-size:14px;font-family:'SF Mono','Fira Code','Consolas',monospace;color:#555;line-height:1.4;padding:4px 0}
   .ref{background:#fff;border-radius:12px;padding:28px 32px;box-shadow:0 1px 3px rgba(0,0,0,0.06);margin-bottom:24px}
-  .ref h3{font-size:15px;font-weight:600;margin-bottom:12px}
+  .ref h3{font-size:15px;font-weight:600;margin-bottom:12px;color:#2A2B2A}
   .ref-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
   .ref-item{font-size:12px;padding:5px 10px;background:#f7f8fa;border-radius:6px;color:#444}
   .ref-item code{font-family:'SF Mono',monospace;font-size:11px;color:#0049DB;font-weight:600}
-  .format-preview{background:#2A2B2A;color:#fff;padding:12px 20px;border-radius:8px;font-family:'SF Mono',monospace;font-size:13px;margin-bottom:24px;text-align:center;letter-spacing:0.3px}
+  .format-preview{background:#2A2B2A;color:#fff;padding:14px 20px;border-radius:8px;font-family:'SF Mono',monospace;font-size:14px;margin-bottom:24px;text-align:center;letter-spacing:0.3px}
   .format-preview span{color:#4EFFCA}
-  .format-row{display:flex;gap:12px;margin-bottom:8px;flex-wrap:wrap}
-  .format-box{background:#2A2B2A;color:#fff;padding:10px 16px;border-radius:8px;font-family:'SF Mono',monospace;font-size:12px;flex:1;min-width:200px}
-  .format-box .tag{color:#4EFFCA;font-size:10px;display:block;margin-bottom:4px;font-family:-apple-system,sans-serif;text-transform:uppercase;letter-spacing:0.06em;font-weight:600}
-  @media(max-width:600px){
-    .container{padding:0 16px;margin:24px auto}
-    .card,.ref{padding:24px 20px}
-    .ref-grid{grid-template-columns:1fr}
-    .header{padding:16px 20px;flex-direction:column;gap:12px;align-items:flex-start}
-    .output-name{font-size:15px}
-    .row-2,.row-3{grid-template-columns:1fr}
-    .format-row{flex-direction:column}
-  }
+  @media(max-width:600px){.container{padding:0 16px;margin:24px auto}.card,.ref{padding:24px 20px}.ref-grid{grid-template-columns:1fr}.header{padding:16px 20px;flex-direction:column;gap:12px;align-items:flex-start}.output-name{font-size:16px}}
 </style>
 </head>
 <body>
-
 <div class="header">
   <h1>Ready Education Marketing Tools</h1>
   <div class="nav">
-    <a href="index.html">Asset Naming Builder</a>
-    <a href="calendar-builder.html" class="active">Calendar Naming Builder</a>
+    <a href="index.html">Asset Naming</a>
+    <a href="calendar-builder.html" class="active">Calendar Naming</a>
   </div>
 </div>
-
 <div class="container">
-
   <div class="card">
     <h2>Calendar Naming Builder</h2>
-    <p class="sub">Generates your internal calendar name AND the matching HubSpot campaign name. Both names stay in sync so MQL source detail always matches the campaign.</p>
-
-    <div class="format-row">
-      <div class="format-box"><span class="tag">Calendar</span><span style="color:#4EFFCA">[Initiative]</span> | <span style="color:#4EFFCA">[Asset Type]</span> | <span style="color:#4EFFCA">[Description]</span></div>
-      <div class="format-box"><span class="tag">HubSpot</span><span style="color:#4EFFCA">Q#.YY</span> - <span style="color:#4EFFCA">[Audience Region]</span> - <span style="color:#4EFFCA">[Campaign Name]</span></div>
-    </div>
-
+    <p class="sub">Generate consistent names for the marketing calendar. Select initiative, asset type, and add a short description.</p>
+    <div class="format-preview"><span>[Initiative]</span> | <span>[Asset Type]</span> | <span>[Description]</span></div>
     <div class="field">
       <label>Initiative</label>
       <select id="initiative">
@@ -137,44 +107,10 @@
         </optgroup>
         <option value="_custom">Other (type your own)</option>
       </select>
-      <div class="custom-field" id="customInitField"><input type="text" id="customInit" placeholder="Type custom initiative name..."></div>
-    </div>
-
-    <div class="row-3">
-      <div class="field">
-        <label>Quarter</label>
-        <select id="quarter">
-          <option value="Q1">Q1 (Jan-Mar)</option>
-          <option value="Q2">Q2 (Apr-Jun)</option>
-          <option value="Q3" selected>Q3 (Jul-Sep)</option>
-          <option value="Q4">Q4 (Oct-Dec)</option>
-        </select>
-      </div>
-      <div class="field">
-        <label>Year</label>
-        <select id="year">
-          <option value="25">2025</option>
-          <option value="26" selected>2026</option>
-          <option value="27">2027</option>
-        </select>
-      </div>
-      <div class="field">
-        <label>Audience</label>
-        <select id="audience">
-          <option value="Prospect NA">Prospect NA</option>
-          <option value="Client NA">Client NA</option>
-          <option value="Both NA">Both NA</option>
-          <option value="Prospect Global">Prospect Global</option>
-          <option value="Client Global">Client Global</option>
-          <option value="Both Global">Both Global</option>
-          <option value="Prospect E2AP">Prospect E2AP</option>
-          <option value="Client E2AP">Client E2AP</option>
-          <option value="Both E2AP">Both E2AP</option>
-          <option value="NA">NA (no audience split)</option>
-        </select>
+      <div class="custom-field" id="customInitField">
+        <input type="text" id="customInit" placeholder="Type custom initiative name...">
       </div>
     </div>
-
     <div class="field">
       <label>Asset Type</label>
       <select id="assetType">
@@ -253,167 +189,177 @@
           <option value="_custom_type">Other (type your own)</option>
         </optgroup>
       </select>
-      <div class="custom-field" id="customTypeField"><input type="text" id="customType" placeholder="Type custom asset type..."></div>
+      <div class="custom-field" id="customTypeField">
+        <input type="text" id="customType" placeholder="Type custom asset type...">
+      </div>
     </div>
-
     <div class="field" id="weekField" style="display:none;">
       <label>Nurture Week Number</label>
       <select id="weekNum">
-        <option value="1">Week 1</option><option value="2">Week 2</option><option value="3">Week 3</option><option value="4">Week 4</option><option value="5">Week 5</option><option value="6">Week 6</option><option value="7">Week 7</option><option value="8">Week 8</option><option value="9">Week 9</option><option value="10">Week 10</option><option value="11">Week 11</option><option value="12">Week 12</option><option value="13">Week 13</option><option value="14">Week 14</option><option value="15">Week 15</option><option value="16">Week 16</option>
+        <option value="1">Week 1</option><option value="2">Week 2</option><option value="3">Week 3</option>
+        <option value="4">Week 4</option><option value="5">Week 5</option><option value="6">Week 6</option>
+        <option value="7">Week 7</option><option value="8">Week 8</option><option value="9">Week 9</option>
+        <option value="10">Week 10</option><option value="11">Week 11</option><option value="12">Week 12</option>
+        <option value="13">Week 13</option><option value="14">Week 14</option><option value="15">Week 15</option>
+        <option value="16">Week 16</option>
       </select>
     </div>
-
     <div class="field">
       <label>Description</label>
       <input type="text" id="description" placeholder="e.g., Events 101, Bergen CC, ASU Webinar, SDR Playbook">
-      <div class="hint">What makes this item distinct. Keep it short and scannable.</div>
+      <div class="hint">What makes this item distinct from others in the same initiative.</div>
     </div>
   </div>
-
-  <!-- OUTPUT -->
   <div class="output-card" id="outputCard">
-
-    <div class="output-section">
-      <div class="output-label">Calendar Name (Google Sheet)</div>
-      <div class="output-name" id="calendarName"></div>
-      <div class="copy-row">
-        <button class="copy-btn" onclick="copyText('calendarName',this)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy Calendar Name</button>
-      </div>
-    </div>
-
-    
-
-    
-
-    
-
-    <div id="relatedSection" style="display:none;margin-top:16px;">
+    <div class="output-label">Calendar Name</div>
+    <div class="output-name" id="outputName"></div>
+    <button class="copy-btn" id="copyBtn" onclick="copyName()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+      Copy
+    </button>
+    <div id="relatedSection" style="display:none;">
       <div class="divider"></div>
       <div class="related-label">Related Items You May Also Need</div>
       <div id="relatedItems"></div>
     </div>
   </div>
-
-  <!-- REFERENCE -->
   <div class="ref">
     <h3>Initiative Tags</h3>
     <div class="ref-grid">
-      <div class="ref-item"><code>Presence</code> Displacement</div>
-      <div class="ref-item"><code>Flagship</code> Large uni FOMO</div>
+      <div class="ref-item"><code>Presence</code> Displacement campaign</div>
+      <div class="ref-item"><code>Flagship</code> Large university FOMO</div>
       <div class="ref-item"><code>CC</code> Community colleges</div>
       <div class="ref-item"><code>Biz Schools</code> Business schools</div>
       <div class="ref-item"><code>HBCU</code> HBCU outreach</div>
-      <div class="ref-item"><code>FSL</code> Greek life</div>
-      <div class="ref-item"><code>International</code> Global</div>
-      <div class="ref-item"><code>First-Year</code> FYE</div>
+      <div class="ref-item"><code>FSL</code> Fraternity/sorority</div>
+      <div class="ref-item"><code>International</code> Global markets</div>
+      <div class="ref-item"><code>First-Year</code> FYE programs</div>
       <div class="ref-item"><code>Transfer</code> Transfer students</div>
-      <div class="ref-item"><code>Commuter</code> Commuter</div>
-      <div class="ref-item"><code>Retention</code> Retention</div>
-      <div class="ref-item"><code>Belonging</code> DE&I</div>
-      <div class="ref-item"><code>Orientation</code> Welcome</div>
+      <div class="ref-item"><code>Commuter</code> Commuter engagement</div>
+      <div class="ref-item"><code>Retention</code> Retention focus</div>
+      <div class="ref-item"><code>Belonging</code> DE&I initiatives</div>
+      <div class="ref-item"><code>Orientation</code> Welcome programs</div>
       <div class="ref-item"><code>Assessment</code> Accreditation</div>
-      <div class="ref-item"><code>AI Insights</code> Product</div>
-      <div class="ref-item"><code>Inspire [City]</code> Events</div>
-      <div class="ref-item"><code>Client</code> Customers</div>
-      <div class="ref-item"><code>Brand</code> General</div>
+      <div class="ref-item"><code>Athletics</code> Athletics programs</div>
+      <div class="ref-item"><code>Alumni</code> Alumni engagement</div>
+      <div class="ref-item"><code>Career Services</code> Career outcomes</div>
+      <div class="ref-item"><code>AI Insights</code> Product feature</div>
+      <div class="ref-item"><code>Inspire [City]</code> Regional events</div>
+      <div class="ref-item"><code>Client</code> Existing customers</div>
+      <div class="ref-item"><code>Brand</code> General content</div>
+      <div class="ref-item"><code>Internal</code> Team enablement</div>
     </div>
   </div>
-
+  <div class="ref">
+    <h3>Asset Type Tags</h3>
+    <div class="ref-grid">
+      <div class="ref-item"><code>Email</code> One-off send</div>
+      <div class="ref-item"><code>Email 1-6</code> Sequence emails</div>
+      <div class="ref-item"><code>Nurture Wk #</code> Weekly stream</div>
+      <div class="ref-item"><code>Save the Date</code> Early awareness</div>
+      <div class="ref-item"><code>Promo 1-9</code> Push emails</div>
+      <div class="ref-item"><code>Reminder</code> Day-of reminder</div>
+      <div class="ref-item"><code>Webinar</code> Live session</div>
+      <div class="ref-item"><code>On-Demand</code> Gated recording</div>
+      <div class="ref-item"><code>Follow-Up</code> Post-event/webinar</div>
+      <div class="ref-item"><code>Thank You</code> Attendee thank-you</div>
+      <div class="ref-item"><code>Survey</code> Feedback request</div>
+      <div class="ref-item"><code>Blog</code> Published post</div>
+      <div class="ref-item"><code>Case Study</code> Success story</div>
+      <div class="ref-item"><code>Guide</code> PDF resource</div>
+      <div class="ref-item"><code>One-Pager</code> Sales collateral</div>
+      <div class="ref-item"><code>Battle Card</code> Competitive</div>
+      <div class="ref-item"><code>Infographic</code> Visual asset</div>
+      <div class="ref-item"><code>Video</code> Video content</div>
+      <div class="ref-item"><code>Landing Page</code> Conversion page</div>
+      <div class="ref-item"><code>Web Page</code> Site page</div>
+      <div class="ref-item"><code>Social</code> LinkedIn organic</div>
+      <div class="ref-item"><code>Paid</code> LinkedIn ads</div>
+      <div class="ref-item"><code>Event</code> In-person</div>
+      <div class="ref-item"><code>Pre-Event</code> Pre-event email</div>
+      <div class="ref-item"><code>Day Before</code> Day-before email</div>
+      <div class="ref-item"><code>Sequence</code> SDR cadence</div>
+      <div class="ref-item"><code>Playbook</code> SDR guide</div>
+      <div class="ref-item"><code>Dossier</code> Prospect research</div>
+      <div class="ref-item"><code>Gate Review</code> Checkpoint</div>
+      <div class="ref-item"><code>Design</code> Graphic asset</div>
+      <div class="ref-item"><code>Newsletter</code> Client newsletter</div>
+    </div>
+  </div>
   <div class="ref">
     <h3>Examples</h3>
-    <div style="font-size:12px;color:#444;line-height:2.4;">
-      <div><strong style="color:#6b6b6b;font-size:10px;text-transform:uppercase">Calendar:</strong> <code style="color:#0049DB">Presence | Promo 1 | Events 101</code></div>
-      <div><strong style="color:#6b6b6b;font-size:10px;text-transform:uppercase">HubSpot:</strong> <code style="color:#555">Q3.26 - Prospect NA - Presence Events 101</code></div>
-      <div style="height:8px"></div>
-      <div><strong style="color:#6b6b6b;font-size:10px;text-transform:uppercase">Calendar:</strong> <code style="color:#0049DB">CC | Nurture Wk 3 | Bergen Success Story</code></div>
-      <div><strong style="color:#6b6b6b;font-size:10px;text-transform:uppercase">HubSpot:</strong> <code style="color:#555">Q3.26 - Prospect NA - CC Student Engagement</code></div>
-      <div style="height:8px"></div>
-      <div><strong style="color:#6b6b6b;font-size:10px;text-transform:uppercase">Calendar:</strong> <code style="color:#0049DB">Inspire Chicago | Follow-Up | Prospects</code></div>
-      <div><strong style="color:#6b6b6b;font-size:10px;text-transform:uppercase">HubSpot:</strong> <code style="color:#555">Q3.26 - Both NA - Inspire Chicago</code></div>
-      <div style="height:8px"></div>
-      <div><strong style="color:#6b6b6b;font-size:10px;text-transform:uppercase">Calendar:</strong> <code style="color:#0049DB">Flagship | Webinar | Who's on CG Panel</code></div>
-      <div><strong style="color:#6b6b6b;font-size:10px;text-transform:uppercase">HubSpot:</strong> <code style="color:#555">Q3.26 - Prospect NA - Flagship Who's on CG Panel</code></div>
+    <div style="font-size:13px;color:#444;line-height:2.0;">
+      <code style="color:#0049DB;">Presence | Email | Beyond Check-Ins Launch</code><br>
+      <code style="color:#0049DB;">Presence | Promo 1 | Events 101</code><br>
+      <code style="color:#0049DB;">Presence | Webinar | DIY to Done Right</code><br>
+      <code style="color:#0049DB;">Presence | On-Demand | Beyond Check-Ins Demo</code><br>
+      <code style="color:#0049DB;">Presence | Follow-Up Non-Attendees | Events 101</code><br>
+      <code style="color:#0049DB;">Presence | Playbook | SDR Field Guide</code><br>
+      <code style="color:#0049DB;">CC | Nurture Wk 3 | Bergen Success Story</code><br>
+      <code style="color:#0049DB;">HBCU | Email 1 | Panel Recording</code><br>
+      <code style="color:#0049DB;">Flagship | Save the Date | ASU Webinar</code><br>
+      <code style="color:#0049DB;">Flagship | Webinar | Who's on CG Panel</code><br>
+      <code style="color:#0049DB;">FSL | Webinar | Beyond Compliance</code><br>
+      <code style="color:#0049DB;">Inspire Chicago | Pre-Event | Welcome</code><br>
+      <code style="color:#0049DB;">Inspire Chicago | Follow-Up | Prospects</code><br>
+      <code style="color:#0049DB;">Inspire Chicago | Dossier | Prospect Research</code><br>
+      <code style="color:#0049DB;">Client | Newsletter | Jun 2026</code><br>
+      <code style="color:#0049DB;">Brand | Blog | Platform Accessibility</code><br>
+      <code style="color:#0049DB;">Brand | Web Page | Events Module</code><br>
+      <code style="color:#0049DB;">AI Insights | Video | 60-Second Demo</code><br>
+      <code style="color:#0049DB;">Assessment | Guide | 10 Questions Evaluation</code><br>
+      <code style="color:#0049DB;">Internal | Slide Deck | Marketing Team Sync</code><br>
     </div>
   </div>
-
 </div>
-
 <script>
-const $ = id => document.getElementById(id);
-const getInit = () => $('initiative').value === '_custom' ? $('customInit').value.trim() : $('initiative').value;
-const getType = () => $('assetType').value === '_custom_type' ? $('customType').value.trim() : $('assetType').value;
-
-function generate() {
-  const init = getInit();
-  const type = getType();
-  const desc = $('description').value.trim();
-  const q = $('quarter').value;
-  const yr = $('year').value;
-  const aud = $('audience').value;
-
-  if (!init || !type) { $('outputCard').classList.remove('visible'); return; }
-
-  // Calendar name
-  let assetStr = type;
-  if (type === 'Nurture Wk') assetStr = 'Nurture Wk ' + $('weekNum').value;
-  let calName = init + ' | ' + assetStr;
-  if (desc) calName += ' | ' + desc;
-  $('calendarName').textContent = calName;
-
-  // HubSpot campaign name
-  if (desc) hubName += ' ' + desc;
-
-  $('outputCard').classList.add('visible');
-
-  // Related items
-  let related = [];
-  if (type === 'Webinar' && desc) {
-    related = [
-      init+' | Save the Date | '+desc, init+' | Promo 1 | '+desc, init+' | Promo 2 | '+desc,
-      init+' | Promo 3 | '+desc, init+' | Reminder | '+desc, init+' | Landing Page | '+desc,
-      init+' | Follow-Up Attendees | '+desc, init+' | Follow-Up Non-Attendees | '+desc,
-      init+' | On-Demand | '+desc, init+' | Thank You | '+desc,
-      init+' | Blog | '+desc+' Post-Webinar', init+' | Social | '+desc+' Recap',
-    ];
-  } else if (type === 'Event' && desc) {
-    related = [
-      init+' | Promo 1 | '+desc, init+' | Promo 2 | '+desc,
-      init+' | Pre-Event | Welcome', init+' | Day Before | '+desc, init+' | Day Of | '+desc,
-      init+' | Follow-Up | Prospects', init+' | Follow-Up | Client List to CS',
-      init+' | Sequence | SDR Follow-Up', init+' | Dossier | Prospect Research',
-      init+' | Social | Event Content',
-    ];
-  } else if (type.startsWith('Promo') && desc) {
-    related = [init+' | Webinar | '+desc, init+' | On-Demand | '+desc, init+' | Follow-Up Non-Attendees | '+desc, init+' | Blog | '+desc+' Post-Webinar'];
-  } else if (type === 'On-Demand' && desc) {
-    related = [init+' | Landing Page | '+desc+' Registration', init+' | Email | '+desc+' On-Demand Promo', init+' | Social | '+desc+' Recording Share'];
-  } else if (type === 'Blog' && desc) {
-    related = [init+' | Social | '+desc+' Promo Post', init+' | Email | '+desc+' Distribution'];
-  } else if (type === 'Case Study' && desc) {
-    related = [init+' | Blog | '+desc+' Story', init+' | Social | '+desc+' Promo Post', init+' | Email | '+desc+' Distribution'];
+const initEl=document.getElementById('initiative'),typeEl=document.getElementById('assetType'),descEl=document.getElementById('description'),weekField=document.getElementById('weekField'),weekNum=document.getElementById('weekNum'),customInitField=document.getElementById('customInitField'),customInit=document.getElementById('customInit'),customTypeField=document.getElementById('customTypeField'),customType=document.getElementById('customType'),outputCard=document.getElementById('outputCard'),outputName=document.getElementById('outputName'),relatedSection=document.getElementById('relatedSection'),relatedItems=document.getElementById('relatedItems');
+function getInit(){return initEl.value==='_custom'?customInit.value.trim():initEl.value}
+function getType(){return typeEl.value==='_custom_type'?customType.value.trim():typeEl.value}
+function generate(){
+  const init=getInit(),type=getType(),desc=descEl.value.trim();
+  if(!init||!type){outputCard.classList.remove('visible');return}
+  let assetStr=type;
+  if(type==='Nurture Wk'&&weekNum.value)assetStr='Nurture Wk '+weekNum.value;
+  let name=init+' | '+assetStr;
+  if(desc)name+=' | '+desc;
+  outputName.textContent=name;
+  outputCard.classList.add('visible');
+  let related=[];
+  if(type==='Webinar'&&desc){
+    related=[init+' | Save the Date | '+desc,init+' | Promo 1 | '+desc,init+' | Promo 2 | '+desc,init+' | Promo 3 | '+desc,init+' | Reminder | '+desc,init+' | Landing Page | '+desc,init+' | Follow-Up Attendees | '+desc,init+' | Follow-Up Non-Attendees | '+desc,init+' | On-Demand | '+desc,init+' | Thank You | '+desc,init+' | Blog | '+desc+' Post-Webinar',init+' | Social | '+desc+' Recap'];
+  }else if(type==='Event'&&desc){
+    related=[init+' | Promo 1 | '+desc,init+' | Promo 2 | '+desc,init+' | Pre-Event | Welcome',init+' | Day Before | '+desc,init+' | Day Of | '+desc,init+' | Follow-Up | Prospects',init+' | Follow-Up | Client List to CS',init+' | Sequence | SDR Follow-Up',init+' | Dossier | Prospect Research',init+' | Social | Event Content'];
+  }else if(type.startsWith('Promo')&&desc){
+    related=[init+' | Webinar | '+desc,init+' | On-Demand | '+desc,init+' | Follow-Up Non-Attendees | '+desc,init+' | Blog | '+desc+' Post-Webinar'];
+  }else if(type==='Blog'&&desc){
+    related=[init+' | Social | '+desc+' Promo Post',init+' | Email | '+desc+' Distribution'];
+  }else if(type==='On-Demand'&&desc){
+    related=[init+' | Landing Page | '+desc+' Registration',init+' | Email | '+desc+' On-Demand Promo',init+' | Social | '+desc+' Recording Share'];
+  }else if(type==='Case Study'&&desc){
+    related=[init+' | Blog | '+desc+' Story',init+' | Social | '+desc+' Promo Post',init+' | Email | '+desc+' Distribution'];
   }
-
-  if (related.length) {
-    $('relatedSection').style.display = 'block';
-    $('relatedItems').innerHTML = related.map(r => '<div class="related-name"><code style="color:#0049DB;font-size:12px;">'+r+'</code></div>').join('');
-  } else {
-    $('relatedSection').style.display = 'none';
-  }
+  if(related.length>0){
+    relatedSection.style.display='block';
+    relatedItems.innerHTML=related.map(function(r){return'<div class="related-name"><code style="color:#0049DB;font-size:12px;">'+r+'</code></div>'}).join('');
+  }else{relatedSection.style.display='none'}
+  document.getElementById('copyBtn').innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy';
+  document.getElementById('copyBtn').classList.remove('copied');
 }
-
-function copyText(elId, btn) {
-  navigator.clipboard.writeText($(elId).textContent).then(() => {
-    const orig = btn.innerHTML;
-    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Copied';
+initEl.addEventListener('change',function(){customInitField.classList.toggle('visible',this.value==='_custom');generate()});
+typeEl.addEventListener('change',function(){weekField.style.display=this.value==='Nurture Wk'?'block':'none';customTypeField.classList.toggle('visible',this.value==='_custom_type');generate()});
+descEl.addEventListener('input',generate);
+weekNum.addEventListener('change',generate);
+customInit.addEventListener('input',generate);
+customType.addEventListener('input',generate);
+function copyName(){
+  navigator.clipboard.writeText(outputName.textContent).then(function(){
+    var btn=document.getElementById('copyBtn');
+    btn.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Copied';
     btn.classList.add('copied');
-    setTimeout(() => { btn.innerHTML = orig; btn.classList.remove('copied'); }, 2000);
+    setTimeout(function(){btn.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy';btn.classList.remove('copied')},2000);
   });
 }
-
-$('initiative').addEventListener('change', function() { $('customInitField').classList.toggle('visible', this.value==='_custom'); generate(); });
-$('assetType').addEventListener('change', function() { $('weekField').style.display = this.value==='Nurture Wk'?'block':'none'; $('customTypeField').classList.toggle('visible', this.value==='_custom_type'); generate(); });
-['description','customInit','customType'].forEach(id => $(id).addEventListener('input', generate));
-['quarter','year','audience','weekNum'].forEach(id => $(id).addEventListener('change', generate));
 </script>
 </body>
 </html>
