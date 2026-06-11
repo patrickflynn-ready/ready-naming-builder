@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ready Education — Asset Naming Builder</title>
+<title>Ready Education - Asset Naming Builder</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -72,15 +72,23 @@
     font-weight: 400;
   }
 
-  .header-badge {
-    background: rgba(255,255,255,0.12);
-    color: rgba(255,255,255,0.8);
-    font-size: 11px;
-    padding: 4px 10px;
-    border-radius: 99px;
-    font-weight: 500;
-    letter-spacing: 0.02em;
+  .header-nav {
+    display: flex;
+    gap: 8px;
   }
+
+  .header-nav a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 5px 12px;
+    border-radius: 6px;
+    transition: all 0.15s;
+    font-weight: 500;
+  }
+
+  .header-nav a:hover { color: #fff; background: rgba(255,255,255,0.12); }
+  .header-nav a.active { color: #fff; background: rgba(255,255,255,0.18); }
 
   main {
     max-width: 780px;
@@ -347,7 +355,7 @@
   @media (max-width: 540px) {
     .fields-grid { grid-template-columns: 1fr; }
     .field-group.full { grid-column: 1; }
-    header { padding: 16px 20px; }
+    header { padding: 16px 20px; flex-direction: column; gap: 12px; align-items: flex-start; }
     main { padding: 20px 16px 48px; }
     .card, .output-card, .also-card { padding: 20px; }
   }
@@ -357,13 +365,16 @@
 
 <header>
   <div class="header-brand">
-    <div class="header-hat">🎓</div>
+    <div class="header-hat">&#x1F393;</div>
     <div>
       <div class="header-title">Ready Education</div>
-      <div class="header-sub">Asset Naming Builder</div>
+      <div class="header-sub">Marketing Tools</div>
     </div>
   </div>
-  <div class="header-badge">Marketing Ops</div>
+  <div class="header-nav">
+    <a href="index.html" class="active">Asset Naming</a>
+    <a href="calendar-builder.html">Calendar Naming</a>
+  </div>
 </header>
 
 <main>
@@ -501,7 +512,7 @@
 </main>
 
 <footer>
-  Ready Education &mdash; Marketing Operations &mdash; Naming Guide v1.3
+  Ready Education | Marketing Operations | Naming Guide v1.4
 </footer>
 
 <script>
@@ -554,7 +565,8 @@
       var mo = v('nlMonth'), yr = v('nlYear'), aud = v('nlAudience'), seg = v('nlSegment');
       if (mo && yr) name = sep([mo + ' ' + yr, 'NL', aud, seg]);
     } else if (selectedCode === 'LIST') {
-      name = sep([v('quarter'), v('audience'), v('campaign'), v('detail')]);
+      // LIST: no audience, matches campaign naming
+      name = sep([v('quarter'), v('campaign'), v('detail')]);
     } else {
       var q = v('quarter'), aud = v('audience'), c = v('campaign'), d = v('detail');
       var parts = (selectedCode === 'FORM' && !q)
@@ -564,30 +576,31 @@
         : [q, selectedCode, aud, c, d];
       name = sep(parts);
 
-      if (c && aud) {
-        var hsCampaign = q ? sep([q, aud, c]) : sep([aud, c]);
+      if (c) {
+        // HubSpot campaign: no audience (matches campaign and list naming)
+        var hsCampaign = q ? sep([q, c]) : '';
         if (selectedCode === 'LP' || selectedCode === 'EVT') {
-          also.push({ label: 'HubSpot campaign name', val: q ? sep([q, aud, c]) : '', hs: true });
+          also.push({ label: 'HubSpot campaign name', val: hsCampaign, hs: true });
           also.push({ label: 'Email \u2013 Launch', val: sep([q, 'EM', aud, c, 'Launch']) });
           also.push({ label: 'Email \u2013 Reminder', val: sep([q, 'EM', aud, c, 'Reminder']) });
-          also.push({ label: 'List \u2013 Registrants', val: sep([q, aud, c, 'Registrants']) });
+          also.push({ label: 'List \u2013 Registrants', val: sep([q, c, 'Registrants']) });
         } else if (selectedCode === 'EM') {
-          also.push({ label: 'HubSpot campaign name', val: q ? sep([q, aud, c]) : '', hs: true });
+          also.push({ label: 'HubSpot campaign name', val: hsCampaign, hs: true });
           also.push({ label: 'Landing page', val: sep([q, 'LP', aud, c, 'Registration']) });
-          also.push({ label: 'List \u2013 Registrants', val: sep([q, aud, c, 'Registrants']) });
+          also.push({ label: 'List \u2013 Registrants', val: sep([q, c, 'Registrants']) });
         } else if (selectedCode === 'OD') {
-          also.push({ label: 'HubSpot campaign name', val: q ? sep([q, aud, c]) : '', hs: true });
+          also.push({ label: 'HubSpot campaign name', val: hsCampaign, hs: true });
           also.push({ label: 'Recording follow-up email', val: sep([q, 'EM', aud, c, 'Recording Follow-Up']) });
         } else if (selectedCode === 'GUIDE') {
-          also.push({ label: 'HubSpot campaign name', val: q ? sep([q, aud, c]) : '', hs: true });
+          also.push({ label: 'HubSpot campaign name', val: hsCampaign, hs: true });
           also.push({ label: 'Landing page', val: sep([q, 'LP', aud, c, 'Download']) });
           also.push({ label: 'Form', val: sep([q, 'FORM', aud, c, 'Download Form']) });
-          also.push({ label: 'List \u2013 Downloads', val: sep([q, aud, c, 'Downloads']) });
+          also.push({ label: 'List \u2013 Downloads', val: sep([q, c, 'Downloads']) });
         } else if (selectedCode === 'FORM') {
-          if (q) also.push({ label: 'HubSpot campaign name', val: sep([q, aud, c]), hs: true });
+          if (q) also.push({ label: 'HubSpot campaign name', val: hsCampaign, hs: true });
           also.push({ label: 'Landing page', val: sep([q, 'LP', aud, c, d || 'Download']) });
         } else {
-          if (q) also.push({ label: 'HubSpot campaign name', val: sep([q, aud, c]), hs: true });
+          if (q) also.push({ label: 'HubSpot campaign name', val: hsCampaign, hs: true });
         }
         also = also.filter(function(a) { return a.val; });
       }
